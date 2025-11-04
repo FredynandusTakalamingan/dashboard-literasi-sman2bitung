@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portal Dashboard Literasi • Numerasi • Karakter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    :root{--glass: rgba(255,255,255,0.06); --accent1: #4f46e5; --accent2: #06b6d4}
+    body{font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    .glass {background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.06)}
+    .btn-grad {background: linear-gradient(90deg,var(--accent1),var(--accent2));}
+    @keyframes fadeIn {from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+    .fade-in {animation: fadeIn 0.8s ease forwards;}
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-slate-100">
+  <main class="max-w-6xl mx-auto p-6">
+    <header class="flex items-center justify-between gap-6 mb-8">
+      <div class="flex items-center gap-4 fade-in">
+        <div class="w-14 h-14 rounded-2xl btn-grad flex items-center justify-center shadow-2xl">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden>
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-2xl font-semibold">Portal Pemantauan Pembelajaran</h1>
+          <p class="text-sm text-slate-300">Akses cepat: Dashboard, Evaluasi, dan Rapor Pendidikan 2025</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center gap-3 fade-in">
+        <button onclick="showGuide()" class="px-4 py-2 rounded-md glass text-sm">Panduan Singkat</button>
+        <a href="https://www.instagram.com/fredy_takalamingan/?hl=id" target="_blank" class="px-4 py-2 rounded-md glass text-sm flex items-center gap-2"><i class="fab fa-instagram"></i> Kontak Admin</a>
+      </div>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 fade-in">
+      <article class="p-6 rounded-2xl glass hover:scale-[1.02] transition-transform duration-200">
+        <h2 class="text-lg font-semibold mb-2">Dashboard Terpadu</h2>
+        <p class="text-sm text-slate-300">Lihat rekap per kelas, per jenis kelamin, dan indikator literasi, numerasi, karakter.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a class="btn-grad inline-flex items-center gap-3 px-4 py-2 rounded-lg shadow-lg font-semibold" target="_blank" rel="noopener noreferrer" href="https://lookerstudio.google.com/reporting/f620af19-cc1f-40ba-87e7-e387bd541305">Buka Dashboard</a>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-2xl glass hover:scale-[1.02] transition-transform duration-200">
+        <h2 class="text-lg font-semibold mb-2">Form Evaluasi</h2>
+        <p class="text-sm text-slate-300">Kumpulkan masukan terkait literasi, numerasi, dan karakter melalui Google Forms.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a class="inline-flex items-center gap-3 px-4 py-2 rounded-lg shadow-lg font-semibold bg-white text-slate-900" target="_blank" rel="noopener noreferrer" href="https://forms.gle/DMAzkkUUUbPFqEYT6">Isi Evaluasi</a>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-2xl glass hover:scale-[1.02] transition-transform duration-200">
+        <h2 class="text-lg font-semibold mb-2">Rapor Pendidikan 2025</h2>
+        <p class="text-sm text-slate-300">Akses rapor pendidikan sekolah tahun 2025 dengan akun belajar.id SMA.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <a class="btn-grad inline-flex items-center gap-3 px-4 py-2 rounded-lg shadow-lg font-semibold" target="_blank" rel="noopener noreferrer" href="https://docs.google.com/spreadsheets/d/1gUSZ8pWrKECUAPTXPTCNRp-R1fd1DfxgQ-qDlU3Gmd8/edit?usp=sharing">Buka Rapor Pendidikan</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Form Saran dan Masukan -->
+    <section class="p-6 rounded-2xl glass mb-10 fade-in">
+      <h2 class="text-lg font-semibold mb-4">Saran dan Masukan</h2>
+      <p class="text-sm text-slate-300 mb-4">Silakan isi saran dan masukan Anda untuk pengembangan portal ini. Semua masukan akan tersimpan dan dapat diakses kembali.</p>
+      <form id="feedbackForm" class="flex flex-col gap-4">
+        <input type="text" id="name" placeholder="Nama Anda" class="px-4 py-2 rounded-lg bg-slate-800 border border-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <textarea id="message" placeholder="Tulis saran dan masukan Anda di sini..." class="px-4 py-2 rounded-lg bg-slate-800 border border-white/10 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-32"></textarea>
+        <button type="button" onclick="saveFeedback()" class="btn-grad px-4 py-2 rounded-lg font-semibold">Kirim Saran</button>
+      </form>
+      <div id="feedbackList" class="mt-6 text-sm text-slate-300"></div>
+    </section>
+
+    <!-- Footer Sosial Media -->
+    <footer class="text-center text-slate-400 text-sm py-6 fade-in">
+      <p>Hubungi Admin: <span class="font-semibold text-white">Fredynandus Takalamingan</span> - <a href="https://www.instagram.com/fredy_takalamingan/?hl=id" target="_blank" class="underline hover:text-white">@fredy_takalamingan</a></p>
+      <div class="mt-3 flex justify-center gap-6">
+        <a target="_blank" href="https://www.facebook.com/maxy.awondatu" class="hover:text-white flex items-center gap-2"><i class="fab fa-facebook"></i> Kepala Sekolah</a>
+        <a target="_blank" href="https://www.facebook.com/share/g/16NgqhiXbJ/" class="hover:text-white flex items-center gap-2"><i class="fab fa-facebook"></i> Sekolah</a>
+        <a target="_blank" href="https://www.instagram.com/sman2_bitung_official/?hl=id" class="hover:text-white flex items-center gap-2"><i class="fab fa-instagram"></i> Sekolah</a>
+      </div>
+      <p class="mt-4">© 2025 SMA Negeri 2 Bitung — Portal Pemantauan • Akses Dashboard, Evaluasi, dan Rapor Pendidikan</p>
+    </footer>
+  </main>
+
+  <!-- Modal Panduan Singkat -->
+  <div id="guideModal" class="fixed inset-0 bg-black/70 flex items-center justify-center hidden z-50">
+    <div class="w-[90%] md:w-2/3 lg:w-1/2 bg-slate-900 rounded-2xl p-6 text-center fade-in">
+      <h2 class="text-xl font-semibold mb-4">Panduan Singkat</h2>
+      <p class="text-slate-300 text-sm leading-relaxed">1. Klik <strong>Buka Dashboard</strong> untuk melihat data literasi, numerasi, dan karakter.<br>2. Klik <strong>Isi Evaluasi</strong> untuk memberikan tanggapan.<br>3. Gunakan akun <strong>belajar.id</strong> untuk membuka Rapor Pendidikan.<br>4. Klik <strong>Kontak Admin</strong> untuk bantuan melalui Instagram.</p>
+      <div class="mt-6">
+        <button onclick="closeGuide()" class="px-4 py-2 rounded-md btn-grad text-sm font-semibold">Tutup Panduan</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showGuide() {document.getElementById('guideModal').classList.remove('hidden');}
+    function closeGuide() {document.getElementById('guideModal').classList.add('hidden');}
+
+    function saveFeedback(){
+      const name = document.getElementById('name').value.trim() || 'Anonim';
+      const message = document.getElementById('message').value.trim();
+      if(!message){alert('Harap isi pesan.');return;}
+      const list = document.getElementById('feedbackList');
+      const entry = document.createElement('div');
+      entry.className = 'border-t border-white/10 pt-2 mt-2';
+      entry.innerHTML = `<strong>${name}</strong>: ${message}`;
+      list.prepend(entry);
+      document.getElementById('feedbackForm').reset();
+    }
+  </script>
+</body>
+</html>
